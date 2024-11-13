@@ -2,13 +2,20 @@
   "name": "ghproxy",
   "version": "0.0.0",
   "devDependencies": {
-    "@cloudflare/workers-types": "^3.16.0",
-    "typescript": "^4.8.4",
-    "wrangler": "2.1.10"
+    "@cloudflare/vitest-pool-workers": "^0.5.2",
+    "@cloudflare/workers-types": "^4.20241022.0",
+    "typescript": "^5.5.2",
+    "vitest": "2.0.5",
+    "wrangler": "^3.60.3"
   },
   "private": true,
   "scripts": {
+    "deploy": "wrangler pages deploy dist",
+    "deploy_worker": "wrangler deploy dist",
+    "dev": "wrangler dev",
+    "build": "wrangler -c wrangler_worker.toml deploy --dry-run --outdir dist && rm -rf dist/_worker.js.map README.md",
     "start": "wrangler dev",
-    "deploy": "wrangler publish"
+    "test": "vitest",
+    "cf-typegen": "wrangler types"
   }
 }
