@@ -1,11 +1,11 @@
 
 #:schema node_modules/wrangler/config-schema.json
-name = "worker-github-proxy"
-main = "src/_worker.ts"
+name = "pages-github-proxy"
+# main = "src/_worker.ts"
 compatibility_date = "2024-10-22"
 compatibility_flags = ["nodejs_compat"]
 # node_compat = true
-# pages_build_output_dir = "dist"
+pages_build_output_dir = "dist"
 
 # Workers Logs
 # Docs: https://developers.cloudflare.com/workers/observability/logs/workers-logs/

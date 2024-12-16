@@ -11,9 +11,9 @@
   "private": true,
   "scripts": {
     "deploy": "wrangler pages deploy dist",
-    "deploy_worker": "wrangler deploy dist",
+    "deploy_worker": "wrangler deploy dist/_worker.js",
     "dev": "wrangler dev",
-    "build": "wrangler -c wrangler_worker.toml deploy --dry-run --outdir dist && rm -rf dist/_worker.js.map README.md",
+    "build": "wrangler -c wrangler.toml deploy --dry-run --outdir dist && rm -rf dist/_worker.js.map README.md",
     "start": "wrangler dev",
     "test": "vitest",
     "cf-typegen": "wrangler types"
